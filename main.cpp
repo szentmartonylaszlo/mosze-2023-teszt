@@ -4,24 +4,24 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int* b = new int[NELEMENTS]; // változónév hiba
-    std::cout << '1-100 ertekek duplazasa' // '' helyett ""
-    for (int i = 0;) // ciklus szintaxis hiba
+    int* b = new int[N_ELEMENTS]; 
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    for (int i = 0; i < N_ELEMENTS; i++) 
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++) // ciklus szintaxis hiba
+    for (int i = 0; i<N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:" // érték kiírása hiányzik
+        std::cout << "Ertek: " << b[i] << std::endl;
     }
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; // nincs megadva kezdõérték
-    for (int i = 0; i < N_ELEMENTS, i++) // ciklus szintaxis hiba
+    int atlag=0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i] // ; hiányzik
+        atlag += b[i]; 
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
-    // nincs felszabadítva a memória
+    delete[] b;
     return 0;
 }
